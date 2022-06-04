@@ -1,41 +1,51 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%# <%= link_to "/", class: "navbar-brand" do %>
-      <%# <%= image_tag "logo.jpg" %>
-    <%# <% end %>
-
-    <form class="form-inline">
-      <div class="input-group">
-        <input type="text" class="form-control first-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-        <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+    <%= link_to "/", class: "navbar-brand" do %>
+      <img src="/assets/thecollector-4ec016f3d2ac93ab3344181afd045969aefee12e029a84286e1759aa96742637.png" width="60px">
+    <% end %>
+    <% if user_signed_in? %>
+        <div>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Mon Compte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-comments"></i> Chat général</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-users"></i> Classements</a>
+            </li>
+          </ul>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-flat dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class= "fas fa-grip-lines"></i>
+          </button>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
       </div>
+    <% else %>
+       <h1 class="navbar-brand">The collector</h1>
       <div>
-
+        <a class="btn btn-flat" href="/users/sign_in" role="button">Se Connecter</a>
+        <a class="btn btn-flat" href="/users/sign_up" role="button">S'enregister</a>
       </div>
-    </form>
-
-
+    <% end %>
+<%#
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
+          <%# <li class="nav-item dropdown">
             <%= image_tag "", class: "avatar dropdown-toggle fas fa-grip-lines", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Les Wagonners", "/offers", class: "dropdown-item" %>
-              <%= link_to "Profil", user_path(current_user), class: "dropdown-item" %>
-              <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item dropdown">
-            <%= image_tag "", class: "avatar dropdown-toggle fas fa-grip-lines", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Se Connecter", "/users/sign_in", class: "dropdown-item" %>
-              <%= link_to "S'enregistrer", "/users/sign_up", class: "dropdown-item" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+            <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> %>
+              <%# <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%# </div> %>
+          <%# </li> %>
+        <%# <% else %>
+        <%# <% end %>
+      <%# </ul> %>
+    <%# </div> %>
   </div>
 </div>
 
