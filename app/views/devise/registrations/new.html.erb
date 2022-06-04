@@ -4,10 +4,19 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+   <%= f.input :username,
+                required: false %>
+    <%= f.input :zipcode,
+                required: false %>
+    <%= f.input :player, as: :boolean,
+                required: true %>
+    <%= f.input :trader, as: :boolean,
+                required: true %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
