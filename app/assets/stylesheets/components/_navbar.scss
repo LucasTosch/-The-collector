@@ -9,4 +9,23 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.navbar {
+  background-color: #FFE4C0;
+}
+
+.navbar-brand {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 40px;
+}
+
+.fa-grip-lines {
+  font-size: 40px;
+}
+
+.first-input {
+  margin-right: 16px;
 }
