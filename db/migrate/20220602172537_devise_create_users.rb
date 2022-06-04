@@ -27,6 +27,17 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       # t.datetime :confirmation_sent_at
       # t.string   :unconfirmed_email # Only if using reconfirmable
 
+      t.string :username
+      t.integer :zipcode
+      t.text :description
+      t.string :image
+      t.boolean :player
+      t.boolean :trader
+      t.integer :trader_score
+      t.integer :player_score
+      t.integer :trust_score
+      t.boolean :admin
+
       ## Lockable
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
