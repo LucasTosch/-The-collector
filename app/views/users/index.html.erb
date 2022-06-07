@@ -1,5 +1,20 @@
-<div style="width: 80%; height: 600px;"
+<div class="container d-flex">
+  <div style="width: 80%; height: 800px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="map-card overflow-auto" style="height: 800px;">
+    <% @users.each do |user| %>
+    <div class="card" style="width: 200px; height: 320px">
+      <%= link_to user_path(user) do %>
+          <%= image_tag user.image, width: '100%', height: '200px'%>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= user.username %></h5>
+        <p class="card-text">Trader : <%= user.trader %></p>
+        <p class="card-text">Player : <%= user.player %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
