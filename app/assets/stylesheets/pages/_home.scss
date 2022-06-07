@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+.container-homepage {
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container-homepage h1 {
+  font-size: 64px;
+  margin-bottom: 32px;
+}
+.container-homepage h2 {
+  margin-bottom: 128px;
+}
