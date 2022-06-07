@@ -1,0 +1,39 @@
+.footer-main {
+  border-top: #1C0C5B solid 2px;
+  background-color: white;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links p {
+  margin: auto;
+}
+.footer-links a {
+    color: #3D2C8D;
+    transition: background 0.3s ease;
+    font-size: 24px;
+    padding: 12px;
+}
+
+.footer-links a:hover {
+  color: #916BBF;
+}
+
+.footer-copywrite {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-copyright a {
+  color: #3D2C8D;
+  transition: background 0.3s ease;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.footer-copyright a:hover {
+  color: #916BBF;
+}
