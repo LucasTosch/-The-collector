@@ -7,7 +7,7 @@
       <%= @user.trust_score %>
       <%= @user.image %>
       <%= @user.zipcode %>
-      <element class="btn btn-primary">Discuter</element>
+      <%= link_to 'Discuter', chatroom_path(@user), class: "btn btn-primary"  %>
     </div>
     <div class="description-profil">
       <h1>Description</h1>
@@ -28,7 +28,7 @@
         dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
         incidunt ut labore et
       </p>
-      <button class="btn btn-primary">Éditer mon profil</button>
+      <%= link_to 'Modifier mon profil', edit_user_path(@user), class: "btn btn-primary"  %>
     </div>
   </div>
 </div>
