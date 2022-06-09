@@ -16,12 +16,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    render :home
+    if @user.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
     @user = User.find(params[:id])
+    # redirect_to root_path
   end
 
   def edit
