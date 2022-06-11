@@ -7,9 +7,9 @@
     <%= f.input :username,
                 required: false %>
     <%= f.input :address,
+                input_html: { data: { geocoder_target: "address"}, class: "d-none" },
+                wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } },
                 required: true %>
-    <%= f.input :zipcode,
-                required: false %>
     <%= f.input :player, as: :boolean,
                 required: true %>
     <%= f.input :trader, as: :boolean,

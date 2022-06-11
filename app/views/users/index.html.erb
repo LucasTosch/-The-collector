@@ -1,22 +1,40 @@
-<div class="container d-flex">
-  <div style="width: 80%; height: 800px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <div class="map-card overflow-auto" style="height: 800px;">
-    <% @users.each do |user| %>
-    <div class="card" style="width: 200px; height: 320px">
-      <%= link_to user_path(user) do %>
-        <% if user.image%>
-          <%= cl_image_tag user.image.key, width: '100%', height: '200px'%>
-        <% end %>
-      <% end %>
-      <div class="card-body">
-        <h5 class="card-title"><%= user.username %></h5>
-        <p class="card-text">Trader : <%= user.trader %></p>
-        <p class="card-text">Player : <%= user.player %></p>
+<div class="container">
+  <div class="filters d-flex">
+    <%= form_tag users_path, method: :get do %>
+      <div class="search-elements">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-inline me-3 mt-3",
+        placeholder: "Recherche ton jeu" %>
       </div>
-    </div>
     <% end %>
+    <%= submit_tag "Search", class: "btn btn-primary btn-sm mt-3 mb-3" %>
+  </div>
+  <div class="map-elements d-flex">
+    <div style="width: 80%; height: 800px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="map-listing mx-3 overflow-auto" style="height: 800px;">
+      <% @users.each do |user| %>
+      <div class="map-card mb-3" style="width: 200px; height: 300px">
+        <%= link_to user_path(user) do %>
+          <% if user.image%>
+            <%= cl_image_tag user.image.key, width: '100%', height: '200px'%>
+          <% end %>
+        <% end %>
+        <div class="map-card-body">
+          <h5 class="card-title text-success text-center pt-3"><%= user.username %></h5>
+          <% if user.trader && user.player%>
+            <p class="card-text text-primary text-center">Joueur & Collectionneur</p>
+          <% elsif user.player %>
+            <p class="card-text text-primary text-center">Joueur</p>
+          <% else %>
+            <p class="card-text text-primary text-center">Collectionneur</p>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
