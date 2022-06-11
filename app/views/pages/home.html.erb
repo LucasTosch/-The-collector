@@ -7,21 +7,21 @@
     <%= link_to 'Trouve les joueurs près de chez toi', users_path, class: "btn-flat cta" %>
   </div>
   <div class="carousel">
+    <input type="radio" name="position" />
     <input type="radio" name="position" checked />
     <input type="radio" name="position" />
-    <input type="radio" name="position" />
-    <main id="carousel">
-      <div class="item">
+    <main id="carousel" data-controller="mouseover-carousel">
+      <div class="item" data-action="mouseover->mouseover-carousel#changeFirstCard">
         <%= link_to users_path do %>
           <img src="https://www.senscritique.com/_next/image?url=https%3A%2F%2Fmedia.senscritique.com%2Fmedia%2F000016446447%2F300%2Fyu_gi_oh_the_duelists_of_the_roses.jpg&w=640&q=75" alt="" width="250px">
         <% end %>
       </div>
-      <div class="item">
+      <div class="item" id="card-1" data-action="mouseover->mouseover-carousel#changeSecondCard">
         <%= link_to users_path do %>
-          <img src="https://www.pokepedia.fr/images/thumb/e/ee/Carte_Set_de_Base_4.png/368px-Carte_Set_de_Base_4.png" alt="" width="250px">
+          <img class="checked" id="card-2" src="https://www.pokepedia.fr/images/thumb/e/ee/Carte_Set_de_Base_4.png/368px-Carte_Set_de_Base_4.png" alt="" width="250px">
         <% end %>
       </div>
-      <div class="item">
+      <div class="item" id="card-3" data-action="mouseover->mouseover-carousel#changeCheckedCard">
         <%= link_to users_path do %>
           <img src="https://i5.walmartimages.com/asr/9991fe0b-b200-4a4d-b26b-d85925543f32_1.6ed2a91c5d59112da74ed9e8d1d07dae.jpeg" alt="" width="250px">
         <% end %>
