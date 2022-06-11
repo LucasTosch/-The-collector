@@ -43,6 +43,11 @@
     font-size: 20px;
   }
 
-  .nav-item {
+  .navbar-nav li {
     padding-right: 20px;
+    display: flex;
+    color:#3D2C8D;
+    font-size: 20px;
+    height: 21px;
+    align-items: center;
   }
