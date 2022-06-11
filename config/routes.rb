@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :articles
   resources :chatrooms, only: [:show]
   resources :messages, only: [:create]
+  get 'ranking' => 'users#ranking'
 end
