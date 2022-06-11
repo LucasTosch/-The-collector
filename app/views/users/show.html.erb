@@ -1,13 +1,32 @@
 <div class="container-users">
   <div class="flex-profil">
-    <div class="carte-profil">
-      <%= @user.username %>
-      <%= @user.trader_score %>
-      <%= @user.player_score %>
-      <%= @user.trust_score %>
-      <%= @user.image %>
-      <%= @user.zipcode %>
-      <%= link_to 'Discuter', chatroom_path(@user), class: "btn btn-primary"  %>
+    <div class="carte-container">
+      <div class="carte-profil">
+        <h5 class="carte-title"><%= @user.username %></h5>
+        <% if @user.trader == true %>
+          <%= @user.trader_score %>
+        <% end %>
+        <% if @user.player == true %>
+          <%= @user.player_score %>
+        <% end %>
+          <%= @user.trust_score %>
+        <div class="carte-image">
+          <% if @user.image%>
+            <%= cl_image_tag @user.image.key, width: '100%', height: '257px'%>
+          <% end %>
+        </div>
+        <div class="carte-body">
+          <div>
+            <% if @user_games == 'Yu-gi-Oh'%>
+              <h6>Duelliste</h6>
+            <% end %>
+          </div>
+          <div>
+          <%# <%= link_to 'Modifier mon profil', edit_user_path(@user), class: "btn btn-primary" %>
+          <%= link_to 'Discuter', chatroom_path(@user), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="description-profil">
       <h1>Description</h1>
