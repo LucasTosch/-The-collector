@@ -2,6 +2,7 @@
   height: 100%;
   width: 80%;
   margin: 0 auto;
+  padding: 32px;
 }
 
 .flex-profil {
@@ -44,4 +45,32 @@
   align-items: end;
   display: flex;
   justify-content: space-between;
+}
+
+.card {
+  margin: 14px;
+}
+
+.card-form-main {
+  margin: auto;
+  width: 800px;
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2px;
+}
+
+.retour-profil {
+  padding: 20px;
+}
+
+.modifier-profil {
+  display: flex;
+  align-items: end;
 }
