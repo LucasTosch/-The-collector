@@ -1,12 +1,34 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    @markers = @users.geocoded.map do |user|
-      {
-        lat: user.latitude,
-        lng: user.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { user: user })
-      }
+    # @users.each do |x|
+    #   if x.trader == true
+        @markers = @users.geocoded.map do |user|
+          {
+            lat: user.latitude,
+            lng: user.longitude,
+            info_window: render_to_string(partial: "info_window", locals: { user: user }),
+            image_url: user.trader ? helpers.asset_url("markers-tcg-dark.png") : helpers.asset_url("markers-tcg.png")
+          }
+        end
+      # elsif x.trader == false
+      #   @markers = @users.geocoded.map do |user|
+      #   {
+      #     lat: user.latitude,
+      #     lng: user.longitude,
+      #     info_window: render_to_string(partial: "info_window", locals: { user: user }),
+      #     image_url: helpers.asset_url("markers-tcg.png")
+      #   }
+        # end
+      # end
+    # end
+    if params[:query].present?
+      sql_query = " \
+       games.name ILIKE :query \
+      "
+      @users = User.joins(:games).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @users = User.all
     end
   end
 
@@ -44,9 +66,13 @@ class UsersController < ApplicationController
     render :home
   end
 
+  def ranking
+    @users = User.all
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:zipcode, :description, :image, :player, :trader, :address)
+    params.require(:user).permit(:description, :image, :player, :trader, :address)
   end
 end

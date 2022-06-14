@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_09_171019) do
+ActiveRecord::Schema.define(version: 2022_06_11_152102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,9 +112,9 @@ ActiveRecord::Schema.define(version: 2022_06_09_171019) do
     t.string "image"
     t.boolean "player"
     t.boolean "trader"
-    t.integer "trader_score"
-    t.integer "player_score"
-    t.integer "trust_score"
+    t.integer "trader_score", default: 0
+    t.integer "player_score", default: 0
+    t.integer "trust_score", default: 0
     t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

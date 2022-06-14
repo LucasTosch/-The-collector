@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   has_one_attached :image
+  has_many :user_games, dependent: :destroy
+  has_many :games, through: :user_games
   validates :username, presence: true
-  validates :zipcode, length: { is: 5 }, presence: true
   validates :address, presence: true
 
 

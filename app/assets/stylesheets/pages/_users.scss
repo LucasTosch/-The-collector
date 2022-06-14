@@ -68,9 +68,18 @@
 
 .retour-profil {
   padding: 20px;
+  align-self: end;
 }
 
 .modifier-profil {
-  display: flex;
   align-items: end;
+  align-self: end;
+}
+
+.description-profil {
+  width: 100%;
+}
+
+.card-description {
+  margin-bottom: 16px;
 }
