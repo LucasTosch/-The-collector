@@ -10,6 +10,7 @@
 
 User.destroy_all
 Game.destroy_all
+Chatroom.destroy_all
 file = URI.open('https://tse1.explicit.bing.net/th?id=OIP.QbYQOLvF6Mm5YRMwKHnxUAHaHa&pid=Api')
 user = User.create!(email: '1234567@gmail.com', password: 'azerty63-1', username: 'tbayard', address: '230 rue paul bert, Lyon', zipcode: '69003', player: true, trader: false, player_score: 27, trust_score: 25)
 user.image.attach(io: file, filename: '1.png', content_type: 'image/png')
