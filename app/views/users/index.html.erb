@@ -6,9 +6,11 @@
         params[:query],
         class: "form-inline me-3 mt-3",
         placeholder: "Recherche ton jeu" %>
+          <span id="search-games-button">
+            <%= submit_tag "Search", class: "btn btn-primary btn-sm mt-3 mb-3" %>
+          </span>
       </div>
     <% end %>
-    <%= submit_tag "Search", class: "btn btn-primary btn-sm mt-3 mb-3" %>
   </div>
   <div class="map-elements d-flex">
     <div style="width: 80%; height: 800px;"
