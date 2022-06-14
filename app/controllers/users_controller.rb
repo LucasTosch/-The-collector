@@ -72,7 +72,8 @@ class UsersController < ApplicationController
 
   private
 
+
   def user_params
-    params.require(:user).permit(:description, :image, :player, :trader, :address)
+    params.require(:user).permit(:description, :image, :player, :trader, :address, :player_score, :trader_score, :trust_score)
   end
 end
