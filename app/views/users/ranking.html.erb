@@ -1,0 +1,22 @@
+<h1 class="pt-3 text-center">Classement</h1>
+
+<table class="zigzag table mt-5">
+  <thead>
+    <tr class="">
+      <th class="header text-center">Joueurs</th>
+      <th class="header text-center">Victoires Duels</th>
+      <th class="header text-center">Échanges réussis</th>
+      <th class="header text-center">Fiabilité</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @users.each do |user| %>
+    <tr>
+      <td class="text-center"><%= user.username %></td>
+      <td class="text-center"><%= user.player_score %></td>
+      <td class="text-center"><%= user.trader_score %></td>
+      <td class="text-center"><%= user.trust_score %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
