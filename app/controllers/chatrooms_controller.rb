@@ -9,14 +9,14 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.new(params_chatroom)
+    @chatroom = Chatroom.new
     @chatroom.save
     redirect_to chatroom_path(@chatroom)
   end
 
   private
 
-  def params_chatroom
-    params.require(:chatroom).permit(:name)
-  end
+  # def params_chatroom
+  #   params.require(:chatroom).permit(:name)
+  # end
 end
