@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, except: [:index]
   end
   resources :articles
-  resources :chatrooms, only: [:show]
-  resources :messages, only: [:create]
+  resources :chatrooms, only: %i[show new create] do
+    resources :messages, only: :create
+  end
 end
