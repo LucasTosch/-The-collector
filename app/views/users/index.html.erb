@@ -11,6 +11,10 @@
           </span>
       </div>
     <% end %>
+      <div class="d-grid gap-2 d-md-block my-auto ms-3">
+      <button class="filters-button btn btn-primary btn-sm" type="button"><%= link_to "Player", "#{users_path}?filter=player" %></button>
+      <button class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Trader", "#{users_path}?filter=trader"  %></button>
+      </div>
   </div>
   <div class="map-elements d-flex">
     <div style="width: 80%; height: 800px;"
