@@ -43,7 +43,10 @@
         </p>
       </div>
       <div class="retour-profil">
-        <%= link_to 'Discuter', new_chatroom_path, class: "btn btn-primary" %>
+        <%= simple_form_for [@chatroom] do |f| %>
+          <%= f.input :receiver, input_html: {value: @user.id}, as: :numeric %>
+          <%= f.submit "Discuter", class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
   </div>
