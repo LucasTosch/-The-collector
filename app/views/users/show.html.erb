@@ -42,12 +42,14 @@
           Trouve un adversaire sur la carte et lance tes premiers duels !
         </p>
       </div>
-      <div class="retour-profil">
-        <%= simple_form_for [@chatroom] do |f| %>
-          <%= f.input :receiver, input_html: {value: @user.id}, as: :numeric %>
-          <%= f.submit "Discuter", class: "btn btn-primary" %>
-        <% end %>
-      </div>
+      <% if current_user != @user %>
+        <div class="retour-profil">
+          <%= simple_form_for [@chatroom] do |f| %>
+            <%= f.input :receiver, input_html: {value: @user.id}, as: :numeric %>
+            <%= f.submit "Discuter", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
