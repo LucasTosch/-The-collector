@@ -10,7 +10,7 @@
 }
 
 .carte-profil {
-  background-image: url("assets/yugioh_card.png");
+  background-image: asset-url("yugioh_card.png");
   background-position: center;
   background-size: 350px;
   color: #2d2a2a;
@@ -68,9 +68,22 @@
 
 .retour-profil {
   padding: 20px;
+  align-self: end;
 }
 
 .modifier-profil {
-  display: flex;
   align-items: end;
+  align-self: end;
+}
+
+.description-profil {
+  width: 100%;
+}
+
+.card-description {
+  margin-bottom: 16px;
+}
+
+.numeric {
+  display: none;
 }

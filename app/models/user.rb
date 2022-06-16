@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many :user_games, dependent: :destroy
   has_many :games, through: :user_games
+  has_many :messages, dependent: :destroy
   validates :username, presence: true
   validates :address, presence: true
 
