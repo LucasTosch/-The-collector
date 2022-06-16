@@ -1,7 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
     @chatrooms = Chatroom.where(sender: current_user)
-    raise
   end
 
   def show
