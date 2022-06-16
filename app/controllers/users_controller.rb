@@ -3,6 +3,17 @@ class UsersController < ApplicationController
     @users = User.all
     # @users.each do |x|
     #   if x.trader == true
+      if params[:query].present?
+        sql_query = " \
+        games.name ILIKE :query \
+        "
+        @users = User.joins(:games).where(sql_query, query: "%#{params[:query]}%")
+      elsif params[:filter].present?
+        @users = User.where(player: true) if params[:filter] == "player"
+        @users = User.where(trader: true) if params[:filter] == "trader"
+      else
+        @users = User.all
+      end
         @markers = @users.geocoded.map do |user|
           {
             lat: user.latitude,
@@ -22,14 +33,6 @@ class UsersController < ApplicationController
         # end
       # end
     # end
-    if params[:query].present?
-      sql_query = " \
-       games.name ILIKE :query \
-      "
-      @users = User.joins(:games).where(sql_query, query: "%#{params[:query]}%")
-    else
-      @users = User.all
-    end
   end
 
   def new
