@@ -8,6 +8,10 @@ class UsersController < ApplicationController
         games.name ILIKE :query \
         "
         @users = User.joins(:games).where(sql_query, query: "%#{params[:query]}%")
+        if params[:filter].present?
+          @users = @users.where(player: true) if params[:filter] == "player"
+          @users = @users.where(trader: true) if params[:filter] == "trader"
+        end
       elsif params[:filter].present?
         @users = User.where(player: true) if params[:filter] == "player"
         @users = User.where(trader: true) if params[:filter] == "trader"
@@ -18,8 +22,8 @@ class UsersController < ApplicationController
           {
             lat: user.latitude,
             lng: user.longitude,
-            info_window: render_to_string(partial: "info_window", locals: { user: user }),
-            image_url: user.trader ? helpers.asset_url("markers-tcg-dark.png") : helpers.asset_url("markers-tcg.png")
+            image_url: user.trader ? helpers.asset_url("markers-tcg-dark.png") : helpers.asset_url("markers-tcg.png") # faire une fonction appelée pour faire 3 cas diff
+
           }
         end
       # elsif x.trader == false

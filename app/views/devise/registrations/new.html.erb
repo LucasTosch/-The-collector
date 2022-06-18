@@ -4,15 +4,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :username,
+    <%= f.input :username, label: 'Pseudo',
                 required: false %>
-    <%= f.input :address,
+    <%= f.input :address, label: 'Adresse',
                 input_html: { data: { geocoder_target: "address"}, class: "d-none" },
                 wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } },
                 required: true %>
-    <%= f.input :player, as: :boolean,
+    <%= f.input :player, label: 'Es-tu un joueur ?', as: :boolean,
                 required: true %>
-    <%= f.input :trader, as: :boolean,
+    <%= f.input :trader, label: 'Es-tu un collectionneur ?', as: :boolean,
                 required: true %>
     <%= f.input :image, as: :file,
                 required: true %>
