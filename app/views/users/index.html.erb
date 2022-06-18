@@ -7,13 +7,13 @@
         class: "form-inline me-3 mt-3",
         placeholder: "Recherche ton jeu" %>
           <span id="search-games-button">
-            <%= submit_tag "Search", class: "btn btn-primary btn-sm mt-3 mb-3" %>
+            <%= submit_tag "Rechercher", class: "btn btn-primary btn-sm mt-3 mb-3" %>
           </span>
       </div>
     <% end %>
       <div class="d-grid gap-2 d-md-block my-auto ms-3">
-      <button class="filters-button btn btn-primary btn-sm" type="button"><%= link_to "Player", "#{users_path}?filter=player" %></button>
-      <button class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Trader", "#{users_path}?filter=trader"  %></button>
+      <button id="player-button" class="filters-button btn btn-primary btn-sm" type="button"><%= link_to "Joueur", "#{users_path}?filter=player" %></button>
+      <button id="trader-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Collectionneur", "#{users_path}?filter=trader"  %></button>
       </div>
   </div>
   <div class="map-elements d-flex">
@@ -21,9 +21,9 @@
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    <div class="map-listing mx-3 overflow-auto" style="height: 800px;">
+    <div class="map-listing overflow-auto" style="height: 800px;">
       <% @users.each do |user| %>
-      <div class="map-card mb-3" style="width: 200px; height: 300px">
+      <div class="map-card mx-3 mb-3 border border-4 border-success" style="width: 200px; height: 300px">
         <%= link_to user_path(user) do %>
           <% if user.image%>
             <%= cl_image_tag user.image.key, width: '100%', height: '200px'%>
