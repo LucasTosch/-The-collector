@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, except: [:index]
   end
   resources :articles
-  resources :chatrooms, only: [:show, :create, :index] do
+  resources :chatrooms, only: [:show, :create, :index, :destroy] do
     resources :messages, only: :create
   end
   get 'ranking' => 'users#ranking'

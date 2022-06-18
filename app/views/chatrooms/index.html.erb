@@ -1,0 +1,31 @@
+<div class="container" style="padding: 20px">
+  <h2 style= "text-align: center">Mes Messages</h2>
+  <% @chatrooms.each do |chatroom| %>
+  <div class="card">
+    <div class="notification" style="display: flex">
+    <%= cl_image_tag chatroom.receiver.image.key, width: '70px'%>
+      <div class="notification-content" style="flex-grow: 15;padding-left: 15px;">
+        <p><small><%=chatroom.created_at%></small></p>
+        <p><strong><%=chatroom.receiver.username %></strong></p>
+      </div>
+      <div class="notification-actions" style="align-self: center;padding-right: 20px;">
+        <i class="fas fa-pencil-alt"></i> <%= link_to 'Aller', chatroom_path(chatroom), class: "btn btn-primary" %>
+        <i class="far fa-trash-alt"></i> <%= link_to 'Supprimer', chatroom_path(chatroom), method: :delete, class: "btn btn-primary", data: { confirm: "Êtes-tu sûr ?" } %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+    <%# <div class="notification">
+      <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
+      <div class="notification-content">
+        <p><small>9th January</small></p>
+        <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+      </div>
+
+      <div class="notification-actions">
+        <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+        <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+      </div>
+    </div>
+  </div> %>
+</div>

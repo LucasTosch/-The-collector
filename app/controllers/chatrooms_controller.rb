@@ -1,7 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
     @chatrooms = Chatroom.where(sender: current_user)
-    raise
   end
 
   def show
@@ -18,6 +17,12 @@ class ChatroomsController < ApplicationController
     @chatroom.sender = current_user
     @chatroom.save
     redirect_to chatroom_path(@chatroom)
+  end
+
+  def destroy
+    @chatroom = Chatroom.find(params[:id])
+    @chatroom.destroy
+    redirect_to chatrooms_path
   end
 
   private
