@@ -29,7 +29,7 @@
             <%= cl_image_tag user.image.key, width: '100%', height: '200px'%>
           <% end %>
         <% end %>
-        <div class="map-card-body">
+        <div class="map-card-body border-top border-2 border-success">
           <h5 class="card-title text-success text-center pt-3"><%= user.username %></h5>
           <% if user.trader && user.player%>
             <p class="card-text text-primary text-center">Joueur & Collectionneur</p>
