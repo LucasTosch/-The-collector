@@ -1,51 +1,171 @@
-// Specific CSS for your home-page
+// // // Specific CSS for your home-page
 .container-homepage {
-  height: 100%;
-  width: 70%;
-  margin: 0 auto;
+height: 100%;
+width: 70%;
+margin: 0 auto;
 }
 
-.text-center {
-  text-align: center;
+// .text-center {
+//   text-align: center;
+// }
+
+.title h1 {
+font-family: 'Syne';
+font-style: normal;
+font-weight: 800;
+// font-size: 46px;
+line-height: 55px;
+text-align: center;
+text-transform: uppercase;
+height: 55px;
+margin-top: 50px;
+font-size: 64px;
+margin-bottom: 32px;
 }
 
-.container-homepage h1 {
-  font-size: 64px;
-  margin-bottom: 32px;
+// .container-homepage h1 {
+//   font-size: 64px;
+//   margin-bottom: 32px;
+// }
+
+.slogan h2 {
+font-family: 'Syne';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height */
+text-align: center;
+padding-bottom: 46px;
 }
 
-.container-homepage h2 {
-  padding-bottom: 46px;
+.logo-home img {
+background: linear-gradient(0deg, #FEF4FF 4.3%, rgba(254, 244, 255, 0) 80.09%);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+// .container-homepage h2 {
+  //   padding-bottom: 46px;
+  // }
 
 .banner-homepage {
-  padding: 24px;
-  margin-bottom: 32px;
-  display: flex;
-  align-items: center;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+// padding: 0px;
+gap: 24px;
+margin-left: 170px;
+margin-right: 170px;
+padding: 24px;
+// margin-bottom: 32px;
+// display: flex;
+// align-items: center;
 }
 
-.container-banner {
-  display: flex;
-}
+// .container-banner {
+//   display: flex;
+// }
 
 .icon-text {
-  text-align: center;
-  padding: 24px;
-  width: 600px;
+text-align: center;
+padding: 24px;
+width: 600px;
+display: flex;
+flex-direction: row;
+align-items: center;
+// padding: 20px;
+gap: 24px;
+// width: 300px;
+height: 120px;
+background: #FFFFFF;
+border-radius: 10px;
 }
 
-.icon-text i {
-  font-size: 50px;
-  padding-bottom: 16px;
+// .icon-text i {
+//   font-size: 50px;
+//   padding-bottom: 16px;
+// }
+
+// .icon-text p {
+//   font-size: 22px;
+//   font-weight: 500;
+// }
+
+.logo-banner {
+width: 70px;
+height: 70px;
+font-size: 50px;
+padding-bottom: 16px;
 }
 
-.icon-text p {
-  font-size: 22px;
-  font-weight: 500;
+
+.text-banner {
+width: 300px;
+height: 76px;
+font-family: 'Syne';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+color: #0B0F46;
+text-align: start;
 }
 
 .cta {
-  font-size: 24px;
-  text-decoration: none;
+font-size: 24px;
+text-decoration: none;
+display: flex;
+flex-direction: row;
+justify-content: center;
+padding: 0px;
+gap: 20px;
+width: auto;
+height: 41px;
+}
+
+.btn-search {
+padding: 11px 22px;
+gap: 10px;
+width: 220px;
+height: 41px;
+background: #3C2C8D;
+box-shadow: 0px 4px 14px rgba(11, 15, 70, 0.2);
+border-radius: 40px;
+font-family: 'Syne';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 50%;
+text-align: center;
+}
+
+.btn-search a {
+color: white;
+text-decoration: none;
+}
+
+
+.btn-informations {
+padding: 11px 22px;
+gap: 10px;
+width: 160px;
+height: 41px;
+background: #FFFFFF;
+border-radius: 40px;
+font-family: 'Syne';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 50%;
+text-align: center;
+}
+
+
+.description-homepage {
+font-family: 'Syne';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+color: #0B0F46;
 }
