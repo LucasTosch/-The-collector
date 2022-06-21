@@ -7,8 +7,8 @@
       <h2>Choisis tes dates</h2>
       <span></span>
       <div class="container">
-        <%= simple_form_for [ @user, @booking ] do |f| %>
-        <%= f.input :player_id %>
+        <%= simple_form_for [ current_user, @booking ] do |f| %>
+        <%= f.input :player_id, as: :hidden %>
         <p><%= f.date_field :date %></p>
         <p><%= f.association :game, as: :radio_buttons %></p>
         <p><%= f.input :booking_type %></p>
