@@ -1,55 +1,45 @@
 <div class="container-homepage">
-  <div class="text-center">
-    <%= image_tag "thecollector-fond-gris.png" %>
+  <div class="top-page d-flex flex-column">
+    <div class="title">
+      <h1>The Collector</h1>
+    </div>
+    <div class="slogan">
+      <h2>Trouvez tous les joueurs et collectionneurs autour de chez vous !</h2>
+    </div>
+    <div class="cta">
+      <button class="btn-search"><%= link_to "Rechercher un joueur", users_path %></button>
+      <button class="btn-informations">En Savoir Plus</button>
+    </div>
   </div>
-  <h2 class="text-center">Trouvez tous les joueurs et collectionneurs autour de chez vous !</h2>
-  <div class= "text-center" style="padding-bottom: 24px">
-    <%= link_to 'Trouve les joueurs près de chez toi', users_path, class: "btn-flat cta" %>
+  <div class="logo-home text-center mt-3">
+    <%= image_tag "the-collector-granular.jpg", class:"img" %>
   </div>
-  <div class="carousel">
-    <input type="radio" name="position" />
-    <input type="radio" name="position" checked />
-    <input type="radio" name="position" />
-    <main id="carousel" data-controller="mouseover-carousel">
-      <div class="item" data-action="mouseover->mouseover-carousel#changeFirstCard">
-        <%= link_to users_path do %>
-          <img src="https://www.senscritique.com/_next/image?url=https%3A%2F%2Fmedia.senscritique.com%2Fmedia%2F000016446447%2F300%2Fyu_gi_oh_the_duelists_of_the_roses.jpg&w=640&q=75" alt="" width="250px">
-        <% end %>
-      </div>
-      <div class="item" id="card-1" data-action="mouseover->mouseover-carousel#changeSecondCard">
-        <%= link_to users_path do %>
-          <img class="checked" id="card-2" src="https://www.pokepedia.fr/images/thumb/e/ee/Carte_Set_de_Base_4.png/368px-Carte_Set_de_Base_4.png" alt="" width="250px">
-        <% end %>
-      </div>
-      <div class="item" id="card-3" data-action="mouseover->mouseover-carousel#changeCheckedCard">
-        <%= link_to users_path do %>
-          <img src="https://i5.walmartimages.com/asr/9991fe0b-b200-4a4d-b26b-d85925543f32_1.6ed2a91c5d59112da74ed9e8d1d07dae.jpeg" alt="" width="250px">
-        <% end %>
-      </div>
-    <main>
+  <div class="description-homepage">
+    <p class="text-center my-5" style="font-size: 20px">
+      The collector est une application qui recense les joueurs, les collectionneurs et
+      les boutiques pour les TCG Yu-Gi-Oh !, Magic The Gathering et Pokémon partout en France.
+      Inscrivez-vous et vous trouverez des personnes proches de chez vous pour compléter votre collection
+      ou des joueurs pour vos duels.
+    </p>
   </div>
 </div>
-<div class="banner-homepage" style="background-color: #916BBF">
-  <div class="container-banner">
+<div class="banner-homepage d-flex">
     <div class="icon-text">
-      <i class="fas fa-map" ></i>
-      <p>Une carte pour retrouver des personnes avec qui partager votre passion, où que vous soyez !</p>
+      <div class="logo-banner"><i class="fas fa-map" ></i></div>
+      <div class="text-banner">
+        Une carte pour retrouver des personnes avec qui partager votre passion, où que vous soyez !
+      </div>
     </div>
     <div class="icon-text">
-    <i class="fas fa-trophy"></i>
-      <p>Affrontez d'autres joueurs et grimpez dans le classement ou effectuez des échanges et augmentez votre score de fiabilité.</p>
+      <div class="logo-banner"><i class="fas fa-trophy"></i></div>
+      <div class="text-banner">
+        Affrontez d'autres joueurs et grimpez dans le classement ou effectuez des échanges et augmentez votre score de fiabilité.
+      </div>
     </div>
     <div class="icon-text">
-      <i class="fas fa-users"></i>
-      <p>Rejoignez une communauté de joueurs et de collectionneurs partout en France.</p>
+      <div class="logo-banner"><i class="fas fa-users"></i></div>
+      <div class="text-banner">
+        Rejoignez une communauté de joueurs et de collectionneurs partout en France.
+      </div>
     </div>
-  </div>
-</div>
-<div class="container-homepage">
-  <p class="text-center my-5" style="font-size: 20px">
-    The collector est une application qui recense les joueurs, les collectionneurs et
-    les boutiques pour les TCG Yu-Gi-Oh !, Magic The Gathering et Pokémon partout en France.
-    Inscrivez-vous et vous trouverez des personnes proches de chez vous pour compléter votre collection
-    ou des joueurs pour vos duels.
-  </p>
 </div>
