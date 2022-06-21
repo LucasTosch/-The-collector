@@ -1,0 +1,20 @@
+<div class="container" style="text-align: center">
+  <div class="card-trip">
+    <img src="https://cartamundi.fr/app/uploads/2017/03/MagictheGathering-Closeup.jpg" alt="">
+    <div class="card-trip-infos">
+      <h2>Organise ta Rencontre</h2>
+      <span></span>
+      <h2>Choisis tes dates</h2>
+      <span></span>
+      <div class="container">
+        <%= simple_form_for [ @user, @booking ] do |f| %>
+        <%= f.input :player_id %>
+        <p><%= f.date_field :date %></p>
+        <p><%= f.association :game, as: :radio_buttons %></p>
+        <p><%= f.input :booking_type %></p>
+        <p style="text-align: center"><%= f.submit "Confirmer", class: "btn btn-primary" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
