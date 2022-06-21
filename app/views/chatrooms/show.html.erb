@@ -23,4 +23,7 @@
   %>
   <%= f.submit "Envoyer", class: "btn btn-primary" %>
 <% end %>
+<div class="booking-btn" style="margin: auto;padding-bottom: 30px;">
+  <%= link_to "Organiser une Rencontre", new_user_booking_path(@chatroom.receiver), class: "btn btn-primary" %>
+</div>
 </div>
