@@ -37,7 +37,6 @@
 # user = User.create!(email: '0983737@gmail.com', password: 'azerty63-1', username: 'tbonny', address: '12 Avenue Georges Pompidou, Lyon', zipcode: '69003', player: false, trader: true, trader_score: 124, trust_score: 120)
 # user.image.attach(io: file, filename: '8.png', content_type: 'image/png')
 
-
 # Chatroom.create( name: 'Discussion générale' )
 
 # Game.create!(name: 'Yugioh', description: "C'est l'heure du duel !", image: 'https://s2.qwant.com/thumbr/0x380/f/f/433eb09539e29fd08ba47442cee13b9bd66bfa3c8b757aec3ffe7fedc956f5/thumb-1920-128973.jpg?u=https%3A%2F%2Favatarfiles.alphacoders.com%2F128%2Fthumb-1920-128973.jpg&q=0&b=1&p=0&a=0')
