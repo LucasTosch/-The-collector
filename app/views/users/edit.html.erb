@@ -1,4 +1,4 @@
-<div class="container-fluid min-vh-100">
+<%# <div class="container-fluid min-vh-100"> %>
   <div class="card-form-main">
     <div class="card-form">
       <%= simple_form_for @user do |f| %>
@@ -10,10 +10,10 @@
           <%= f.input :image, label: 'Mon Avatar', as: :file %>
           <%= f.submit 'Modifier mon Avatar', class: 'btn btn-primary' %>
       <% end %>
-        </div>
-        <div class="retour-profil">
-          <%= link_to 'Retour', user_path(@user), class: "btn btn-primary"  %>
+          <div class="retour-profil">
+            <button class="btn btn-primary"><%= link_to "Retour", user_path(@user) %></button>
+          </div>
         </div>
     </div>
   </div>
-</div>
+<%# </div> %>

@@ -1,4 +1,5 @@
 // // // Specific CSS for your home-page
+
 .container-homepage {
 height: 100%;
 width: 70%;
@@ -39,10 +40,11 @@ text-align: center;
 padding-bottom: 46px;
 }
 
-.logo-home img {
-background: linear-gradient(0deg, #FEF4FF 4.3%, rgba(254, 244, 255, 0) 80.09%);
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
+// .logo-home {
+//   background-image: url("background-card.jpg");
+//   background-size: 105%;
+// }
+
 // .container-homepage h2 {
   //   padding-bottom: 46px;
   // }

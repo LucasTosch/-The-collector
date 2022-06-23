@@ -1,45 +1,47 @@
-<div class="container-homepage">
-  <div class="top-page d-flex flex-column">
-    <div class="title">
-      <h1>The Collector</h1>
-    </div>
-    <div class="slogan">
-      <h2>Trouvez tous les joueurs et collectionneurs autour de chez vous !</h2>
-    </div>
-    <div class="cta">
-      <button class="btn-primary"><%= link_to "Rechercher un joueur", users_path %></button>
-      <button class="btn-informations">En Savoir Plus</button>
-    </div>
-  </div>
-  <div class="logo-home text-center mt-3">
-    <%= image_tag "the-collector-granular.jpg", class:"img" %>
-  </div>
-  <div class="description-homepage">
-    <p class="text-center my-5" style="font-size: 20px">
-      The collector est une application qui recense les joueurs, les collectionneurs et
-      les boutiques pour les TCG Yu-Gi-Oh !, Magic The Gathering et Pokémon partout en France.
-      Inscrivez-vous et vous trouverez des personnes proches de chez vous pour compléter votre collection
-      ou des joueurs pour vos duels.
-    </p>
-  </div>
-</div>
-<div class="banner-homepage d-flex">
-    <div class="icon-text">
-      <div class="logo-banner"><i class="fas fa-map" ></i></div>
-      <div class="text-banner">
-        Une carte pour retrouver des personnes avec qui partager votre passion, où que vous soyez !
+<div class="home">
+  <div class="container-homepage">
+    <div class="top-page d-flex flex-column">
+      <div class="title">
+        <h1>The Collector</h1>
+      </div>
+      <div class="slogan">
+        <h2>Trouvez tous les joueurs et collectionneurs autour de chez vous !</h2>
+      </div>
+      <div class="cta">
+        <button class="btn-primary"><%= link_to "Rechercher un joueur", users_path %></button>
+        <button class="btn-informations">En Savoir Plus</button>
       </div>
     </div>
-    <div class="icon-text">
-      <div class="logo-banner"><i class="fas fa-trophy"></i></div>
-      <div class="text-banner">
-        Affrontez d'autres joueurs et grimpez dans le classement ou effectuez des échanges et augmentez votre score de fiabilité.
-      </div>
+    <div class="logo-home text-center mt-3">
+      <%= image_tag "logo-granular.png", class:"img", width: '600px', height: '600px'%>
     </div>
-    <div class="icon-text">
-      <div class="logo-banner"><i class="fas fa-users"></i></div>
-      <div class="text-banner">
-        Rejoignez une communauté de joueurs et de collectionneurs partout en France.
-      </div>
+    <div class="description-homepage">
+      <p class="text-center my-5" style="font-size: 20px">
+        The collector est une application qui recense les joueurs, les collectionneurs et
+        les boutiques pour les TCG Yu-Gi-Oh !, Magic The Gathering et Pokémon partout en France.
+        Inscrivez-vous et vous trouverez des personnes proches de chez vous pour compléter votre collection
+        ou des joueurs pour vos duels.
+      </p>
     </div>
+  </div>
+  <div class="banner-homepage d-flex">
+      <div class="icon-text">
+        <div class="logo-banner"><i class="fas fa-map" ></i></div>
+        <div class="text-banner">
+          Une carte pour retrouver des personnes avec qui partager votre passion, où que vous soyez !
+        </div>
+      </div>
+      <div class="icon-text">
+        <div class="logo-banner"><i class="fas fa-trophy"></i></div>
+        <div class="text-banner">
+          Affrontez d'autres joueurs et grimpez dans le classement ou effectuez des échanges et augmentez votre score de fiabilité.
+        </div>
+      </div>
+      <div class="icon-text">
+        <div class="logo-banner"><i class="fas fa-users"></i></div>
+        <div class="text-banner">
+          Rejoignez une communauté de joueurs et de collectionneurs partout en France.
+        </div>
+      </div>
+  </div>
 </div>
