@@ -8,16 +8,18 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    @player = User.find(params[:user_id])
     @booking = Booking.new
-    @booking.creator = @user
+    @booking.creator = current_user
+    @booking.player = @player
   end
 
   def create
     @booking = Booking.new(params_booking)
-    @booking.creator = @user
-    @booking.save
-    # redirect_to user_booking_path(@booking)
+    @booking.player = User.find(params[:booking][:player_id])
+    @booking.creator = current_user
+    @booking.save!
+    redirect_to user_booking_path(current_user.id, @booking.id)
   end
 
   def update

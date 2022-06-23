@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="pt-3 text-center">Classement de fiabilité</h1>
+  <div class="ranking-flex pt-3">
+    <i class="fas fa-thumbs-up px-2"></i>
+    <p>Classement des collectionneurs et joueurs les plus fiables</p>
+    <i class="fas fa-thumbs-up px-2"></i>
+  </div>
+  <table class="table table-striped mt-5">
+    <thead>
+      <tr class="">
+        <th scope="col" class="header text-center" style="font-size: 21px;">#</th>
+        <th class="header text-center" style="font-size: 21px;">Nom d'utilisateur</th>
+        <th class="header text-center" style="font-size: 21px;">Score de fiabilité</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.order(trust_score: :desc).each_with_index do |user, index| %>
+      <tr>
+        <td scope="row" class="text-center"><%= index +1 %></td>
+        <td class="text-center"><%= user.username %></td>
+        <td class="text-center"><%= user.trust_score %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

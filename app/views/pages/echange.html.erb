@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="pt-3 text-center">Classement des échanges</h1>
+  <div class="ranking-flex pt-3">
+    <i class="fas fa-handshake px-2"></i>
+    <p>Classements des joueurs et des collectionneurs ayant réalisé le plus d'échanges</p>
+    <i class="fas fa-handshake px-2"></i>
+  </div>
+  <table class="table table-striped mt-5">
+    <thead>
+      <tr class="">
+        <th scope="col" class="header text-center" style="font-size: 21px;">#</th>
+        <th class="header text-center" style="font-size: 21px;">Nom d'utilisateur</th>
+        <th class="header text-center" style="font-size: 21px;">Nombre d'échanges</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.order(trader_score: :desc).each_with_index do |user, index| %>
+      <tr>
+        <td scope="row" class="text-center"><%= index +1 %></td>
+        <td class="text-center"><%= user.username %></td>
+        <td class="text-center"><%= user.trader_score %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
