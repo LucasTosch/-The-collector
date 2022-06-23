@@ -1,19 +1,24 @@
 <div class="container">
-  <div class="filters d-flex">
+  <div class="filters d-flex align-items-center my-1">
     <%= form_tag users_path, method: :get do %>
-      <div class="search-elements">
+      <div class="search-elements ">
         <%= text_field_tag :query,
         params[:query],
-        class: "form-inline me-3 mt-3",
+        class: "form-inline",
         placeholder: "Recherche ton jeu" %>
           <span id="search-games-button">
-            <%= submit_tag "Rechercher", class: "btn btn-primary btn-sm mt-3 mb-3" %>
+            <%= submit_tag "Rechercher", class: "btn btn-primary btn-sm" %>
           </span>
       </div>
     <% end %>
-      <div class="d-grid gap-2 d-md-block my-auto ms-3">
-      <button id="player-button" class="filters-button btn btn-primary btn-sm" type="button"><%= link_to "Joueur", "#{users_path}?filter=player" %></button>
-      <button id="trader-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Collectionneur", "#{users_path}?filter=trader"  %></button>
+    <div class="div p-3">
+        Filtre tes recherches :
+    </div>
+      <div class="gap-2 d-md-block">
+        <button id="player-button" class="filters-button btn btn-primary btn-sm" type="button"><%= link_to "Joueur", "#{users_path}?filter=player" %>
+        </button>
+        <button id="trader-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Collectionneur", "#{users_path}?filter=trader" %>
+        </button>
       </div>
   </div>
   <div class="map-elements d-flex">

@@ -10,8 +10,8 @@
         <%= simple_form_for [ current_user, @booking ] do |f| %>
         <%= f.input :player_id, as: :hidden %>
         <p><%= f.date_field :date %></p>
-        <p><%= f.association :game, as: :radio_buttons %></p>
-        <p><%= f.input :booking_type %></p>
+        <p><%= f.association :game, as: :radio_buttons, label: "Choisis un jeu" %></p>
+        <p><%= f.collection_radio_buttons :booking_type, [['Duel', 'Duel'], ['Echange', 'Echange']], :first, :last %></p>
         <p style="text-align: center"><%= f.submit "Confirmer", class: "btn btn-primary" %></p>
         <% end %>
       </div>
