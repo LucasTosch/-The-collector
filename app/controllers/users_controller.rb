@@ -74,10 +74,6 @@ class UsersController < ApplicationController
     render :home
   end
 
-  def ranking
-    @users = User.all
-  end
-
   private
 
 
