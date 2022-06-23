@@ -34,7 +34,7 @@
   border-radius: 4px;
   width: 277px;
   padding-left: 25px;
-  padding-top: 40px;
+  padding-top: 18px;
   height: 300px;
 }
 
@@ -54,7 +54,8 @@
 .card-form-main {
   margin: auto;
   width: 800px;
-  margin-top: 20px;
+  // margin-top: 20px;
+  padding-top: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -62,13 +63,13 @@
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  // border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 2px;
 }
 
 .retour-profil {
-  padding: 20px;
-  align-self: end;
+  padding-top: 15px;
+  // align-self: end;
 }
 
 .modifier-profil {
