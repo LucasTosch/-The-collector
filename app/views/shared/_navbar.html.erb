@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <img src="/assets/thecollector-4ec016f3d2ac93ab3344181afd045969aefee12e029a84286e1759aa96742637.png" width="60px">
+      <%= image_tag "thecollector.png", class:"img"%>
     <% end %>
     <% if user_signed_in? %>
         <div>
