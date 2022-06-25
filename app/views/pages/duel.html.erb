@@ -71,3 +71,31 @@
   </table>
   </div>
 </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Yu-Gi-Oh!</th>
+      <th>Magic</th>
+      <th>Pokémon</th>
+    </tr>
+  </thead>
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Joueur</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% raise %>
+    <% @users.order(player_score: :desc).each_with_index do |user, index| %>
+      <tr>
+        <td scope="row" class="text-center"><%= index +1 %></td>
+        <td class="text-center"><%= cl_image_tag user.image.key, class: "avatar", alt: "avatar" %></td>
+        <td class="text-center"><%= user.username %></td>
+        <td class="text-center"><%= user.player_score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

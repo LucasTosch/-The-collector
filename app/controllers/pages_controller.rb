@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
   end
@@ -14,5 +14,12 @@ class PagesController < ApplicationController
 
   def duel
     @users = User.all
+    if params[:query].present?
+      sql_query = " \
+      games.name ILIKE :query \
+      "
+      @users = User.joins(:games).where(sql_query, query: "%#{params[:query]}%")
+      raise
+    end
   end
 end

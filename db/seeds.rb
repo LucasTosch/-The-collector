@@ -55,8 +55,6 @@ UserGame.create!(user_id: 39, game_id: 13)
 UserGame.create!(user_id: 40, game_id: 14)
 UserGame.create!(user_id: 41, game_id: 12)
 UserGame.create!(user_id: 42, game_id: 13)
-=======
-UserGame.create!(user_id: 26, game_id: 7)
+UserGame.create!(user_id: 25, game_id: 7)
 UserGame.create!(user_id: 27, game_id: 8)
 UserGame.create!(user_id: 28, game_id: 9)
-
