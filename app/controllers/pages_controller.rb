@@ -13,13 +13,13 @@ class PagesController < ApplicationController
   end
 
   def duel
-    @users = User.all
-    if params[:query].present?
-      sql_query = " \
-      games.name ILIKE :query \
-      "
-      @users = User.joins(:games).where(sql_query, query: "%#{params[:query]}%")
-      raise
+    @users = User.all.where(player: true)
+    if params[:game] == "Yugioh"
+      @users = UserGame.where(game_id: 16).map { |user_game| User.find(user_game.user_id) }
+    elsif params[:game] == "Pokemon"
+      @users = UserGame.where(game_id: 17).map { |user_game| User.find(user_game.user_id) }
+    elsif params[:game] == "Magic The Gathering"
+      @users = UserGame.where(game_id: 18).map { |user_game| User.find(user_game.user_id) }
     end
   end
 end

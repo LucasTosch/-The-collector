@@ -1,101 +1,38 @@
 <div class="container">
   <h1 class="pt-3 text-center">Classement des meilleurs joueurs</h1>
-  <div class="ranking-flex pt-3">
-    <i class="fas fa-trophy px-2"></i>
-    <p>Classements des meilleurs duellistes Yu-Gi-Oh!</p>
-    <i class="fas fa-trophy px-2"></i>
-  </div>
-  <table class="table table-striped my-5">
+  <table>
     <thead>
-      <tr class="">
-        <th scope="col" class="header text-center" style="font-size: 21px;">#</th>
-        <th class="header text-center" style="font-size: 21px;">Nom d'utilisateur</th>
-        <th class="header text-center" style="font-size: 21px;">Points de duel</th>
+      <tr>
+        <th>
+          <button id="player-button" class="filters-button btn btn-primary btn-sm" type="button"><%= link_to "Yu-gi-Oh!", "#{duel_path}?game=Yugioh" %>
+          </button>
+        </th>
+        <th>
+          <button id="player-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Magic", "#{duel_path}?game=Magic The Gathering" %>
+          </button>
+        </th>
+        <th>
+          <button id="player-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Pokémon", "#{duel_path}?game=Pokemon" %>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Joueur</th>
+        <th>Score</th>
       </tr>
     </thead>
     <tbody>
-    <% @users.order(player_score: :desc).each_with_index do |user, index| %>
-      <tr>
-        <td scope="row" class="text-center"><%= index +1 %></td>
-        <td class="text-center"><%= user.username %></td>
-        <td class="text-center"><%= user.player_score %></td>
-      </tr>
+      <% @users.sort_by { |user| user.player_score }.reverse.each_with_index do |user, index| %>
+        <tr>
+          <td scope="row" class="text-center"><%= index +1 %></td>
+          <td class="text-center"><%= cl_image_tag user.image.key, class: "avatar", alt: "avatar" %></td>
+          <td class="text-center"><%= user.username %></td>
+          <td class="text-center"><%= user.player_score %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
-  <div class="ranking-flex pt-3">
-    <i class="fas fa-trophy px-2"></i>
-    <p>Classements des meilleurs joueurs Pokémon</p>
-    <i class="fas fa-trophy px-2"></i>
-  </div>
-  <table class="table table-striped my-5">
-    <thead>
-      <tr class="">
-        <th scope="col" class="header text-center" style="font-size: 21px;">#</th>
-        <th class="header text-center" style="font-size: 21px;">Nom d'utilisateur</th>
-        <th class="header text-center" style="font-size: 21px;">Points de duel</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @users.order(player_score: :desc).each_with_index do |user, index| %>
-      <tr>
-        <td scope="row" class="text-center"><%= index +1 %></td>
-        <td class="text-center"><%= user.username %></td>
-        <td class="text-center"><%= user.player_score %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <div class="ranking-flex pt-3">
-    <i class="fas fa-trophy px-2"></i>
-    <p>Classements des meilleurs Joueurs Magic</p>
-    <i class="fas fa-trophy px-2"></i>
-  </div>
-  <table class="table table-striped my-5">
-    <thead>
-      <tr class="">
-        <th scope="col" class="header text-center" style="font-size: 21px;">#</th>
-        <th class="header text-center" style="font-size: 21px;">Nom d'utilisateur</th>
-        <th class="header text-center" style="font-size: 21px;">Points de duel</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @users.order(player_score: :desc).each_with_index do |user, index| %>
-      <tr>
-        <td scope="row" class="text-center"><%= index +1 %></td>
-        <td class="text-center"><%= user.username %></td>
-        <td class="text-center"><%= user.player_score %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-  </div>
 </div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Yu-Gi-Oh!</th>
-      <th>Magic</th>
-      <th>Pokémon</th>
-    </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th>Position</th>
-      <th>Joueur</th>
-      <th>Score</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% raise %>
-    <% @users.order(player_score: :desc).each_with_index do |user, index| %>
-      <tr>
-        <td scope="row" class="text-center"><%= index +1 %></td>
-        <td class="text-center"><%= cl_image_tag user.image.key, class: "avatar", alt: "avatar" %></td>
-        <td class="text-center"><%= user.username %></td>
-        <td class="text-center"><%= user.player_score %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
