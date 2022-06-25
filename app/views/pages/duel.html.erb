@@ -1,38 +1,41 @@
-<div class="container">
+<div class="container" style="background-color: white;">
   <h1 class="pt-3 text-center">Classement des meilleurs joueurs</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>
-          <button id="player-button" class="filters-button btn btn-primary btn-sm" type="button"><%= link_to "Yu-gi-Oh!", "#{duel_path}?game=Yugioh" %>
-          </button>
-        </th>
-        <th>
-          <button id="player-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Magic", "#{duel_path}?game=Magic The Gathering" %>
-          </button>
-        </th>
-        <th>
-          <button id="player-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Pokémon", "#{duel_path}?game=Pokemon" %>
-          </button>
-        </th>
-      </tr>
-    </thead>
-    <thead>
-      <tr>
-        <th>Position</th>
-        <th>Joueur</th>
-        <th>Score</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.sort_by { |user| user.player_score }.reverse.each_with_index do |user, index| %>
+  <div class="container-classement">
+    <table style="margin: auto;">
+      <thead>
         <tr>
-          <td scope="row" class="text-center"><%= index +1 %></td>
-          <td class="text-center"><%= cl_image_tag user.image.key, class: "avatar", alt: "avatar" %></td>
-          <td class="text-center"><%= user.username %></td>
-          <td class="text-center"><%= user.player_score %></td>
+          <th style="text-align: center;">
+            <button id="player-button" class="filters-button btn btn-primary btn-sm" type="button"><%= link_to "Yu-gi-Oh!", "#{duel_path}?game=Yugioh" %>
+            </button>
+          </th>
+          <th style="text-align: center;">
+            <button id="player-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Magic", "#{duel_path}?game=Magic The Gathering" %>
+            </button>
+          </th>
+          <th style="text-align: center;">
+            <button id="player-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Pokémon", "#{duel_path}?game=Pokemon" %>
+            </button>
+          </th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+    </table>
+    <table class="table table-striped mt-5" style="margin: auto;">
+      <thead>
+        <tr>
+          <th style="text-align: center;">Position</th>
+          <th style="text-align: center;">Joueur</th>
+          <th style="text-align: center;">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.sort_by { |user| user.player_score }.reverse.each_with_index do |user, index| %>
+          <tr>
+            <td scope="row" class="text-center"><%= index +1 %></td>
+            <td class="text-center"><%= cl_image_tag user.image.key, class: "avatar-large", alt: "avatar",style: "width: 10%;" %><%= user.username %></td>
+            <td class="text-center"><%= user.player_score %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
