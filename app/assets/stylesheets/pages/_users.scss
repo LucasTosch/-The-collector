@@ -34,7 +34,7 @@
   border-radius: 4px;
   width: 277px;
   padding-left: 25px;
-  padding-top: 18px;
+  padding-top: 42px;
   height: 300px;
 }
 
@@ -45,6 +45,10 @@
   align-items: end;
   display: flex;
   justify-content: space-between;
+}
+
+.card-text {
+  height: 137px;
 }
 
 .card {
@@ -70,15 +74,20 @@
 .retour-profil {
   padding-top: 15px;
   // align-self: end;
+  // padding-left: 14px;
 }
 
-.modifier-profil {
-  align-items: end;
-  align-self: end;
-}
+// .modifier-profil {
+//   align-items: end;
+//   align-self: end;
+//   padding-top: 15px;
+//   // align-self: end;
+//   padding-left: 14px;
+// }
 
 .description-profil {
   width: 100%;
+  margin-top: 15px;
 }
 
 .card-description {
@@ -87,4 +96,60 @@
 
 .numeric {
   display: none;
+}
+
+
+.information-profile {
+  width: 1000px;
+  // height: 1000px;
+}
+
+.buttons {
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.trader-score button {
+  padding: 11px 22px;
+  gap: 10px;
+  width: 220px;
+  height: 41px;
+  background: #C996CC;
+  border-radius: 40px;
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 50%;
+  text-align: center;
+}
+
+.player-score button {
+  padding: 11px 22px;
+  gap: 10px;
+  width: 220px;
+  height: 41px;
+  background: #C996CC;
+  border-radius: 40px;
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 50%;
+  text-align: center;
+}
+
+.trust-score button {
+  padding: 11px 22px;
+  gap: 10px;
+  width: 220px;
+  height: 41px;
+  background: #C996CC;
+  border-radius: 40px;
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 50%;
+  text-align: center;
 }
