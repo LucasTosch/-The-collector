@@ -69,18 +69,38 @@
       </div>
     </div>
   </div>
-  <h2 class="card-header">Mes échanges/duels</h2>
-  <% if @user_1.empty? %>
-    <%= "vide" %>
-  <% else %>
-    <% @user_1.each do |booking| %>
-    <div class="booking-user">
-      <%= booking.date %>
-      <%= booking.creator.username %>
-      <%= booking.player.username %>
-      <%= booking.booking_type %>
-      <%= booking.result %>
-    <% end %>
-  <% end %>
-    </div>
+    <h2 class="card-header text-center">Mes échanges/duels</h2>
+      <%# <% if @user_1.empty? %>
+      <%#= "Vous n'avez réalisé de d'échanges/duels" %>
+      <%# else %>
+        <%# @user_1.each do |booking| %>
+        <%# <div class="booking-user"> %>
+          <%#= booking.date %>
+          <%#= booking.creator.username %>
+          <%#= booking.player.username %>
+          <%#= booking.booking_type %>
+          <%#= booking.result %>
+        <%# end %>
+        <%# end %>
+        <%# </div> %>
+    <table class="table table-striped mt-5" style="margin: auto">
+        <thead>
+          <tr>
+            <th style="text-align: center;">Date</th>
+            <th style="text-align: center;">Adversaire</th>
+            <th style="text-align: center;">Type</th>
+            <th style="text-align: center;">Résultat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user_1.each do |booking| %>
+            <tr>
+              <td scope="row" class="text-center"><%= booking.date %></td>
+              <td class="text-center"><%= booking.player.username %></td>
+              <td class="text-center"><%= booking.booking_type %></td>
+              <td class="text-center"><%= booking.result %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 </div>
