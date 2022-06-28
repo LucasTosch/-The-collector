@@ -6,20 +6,32 @@ class PagesController < ApplicationController
 
   def fiable
     @users = User.all
+    if params[:type] == "player"
+      @users = User.all.where(player: true)
+    elsif params[:type] == "trader"
+      @users = User.all.where(trader: true)
+    end
   end
 
   def echange
-    @users = User.all
+    @traders = User.all.where(trader: true)
+    if params[:game] == "Yugioh"
+      @traders = UserGame.where(game_id: 7).map { |user_game| User.find(user_game.user_id) }
+    elsif params[:game] == "Pokemon"
+      @traders = UserGame.where(game_id: 8).map { |user_game| User.find(user_game.user_id) }
+    elsif params[:game] == "Magic The Gathering"
+      @traders = UserGame.where(game_id: 9).map { |user_game| User.find(user_game.user_id) }
+    end
   end
 
   def duel
-    @users = User.all.where(player: true)
+    @players = User.all.where(player: true)
     if params[:game] == "Yugioh"
-      @users = UserGame.where(game_id: 7).map { |user_game| User.find(user_game.user_id) }
+      @players = UserGame.where(game_id: 7).map { |user_game| User.find(user_game.user_id) }
     elsif params[:game] == "Pokemon"
-      @users = UserGame.where(game_id: 8).map { |user_game| User.find(user_game.user_id) }
+      @players = UserGame.where(game_id: 8).map { |user_game| User.find(user_game.user_id) }
     elsif params[:game] == "Magic The Gathering"
-      @users = UserGame.where(game_id: 9).map { |user_game| User.find(user_game.user_id) }
+      @players = UserGame.where(game_id: 9).map { |user_game| User.find(user_game.user_id) }
     end
   end
 end
