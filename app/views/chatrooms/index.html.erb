@@ -4,14 +4,14 @@
   <div class="card">
     <div class="notification" style="display: flex; justify-content: space-between;">
       <div style="display: flex; margin: 16px;">
-        <% if chatroom.receiver.image.key.empty? %>
+        <% if chatroom.sender.image.key.empty? %>
           <%= cl_image_tag url("https://tse1.explicit.bing.net/th?id=OIP.QbYQOLvF6Mm5YRMwKHnxUAHaHa&pid=Api"), class: "avatar-large", alt: "avatar-large" %>
         <% else %>
-          <%= cl_image_tag chatroom.receiver.image.key, class: "avatar-large", alt: "avatar-large" %>
+          <%= cl_image_tag chatroom.sender.image.key, class: "avatar-large", alt: "avatar-large" %>
         <% end %>
         <div class="notification-content" style="flex-grow: 15;padding-left: 30px;">
           <p><small><%= chatroom.updated_at %></small></p>
-          <p><strong><%= chatroom.receiver.username %></strong></p>
+          <p><strong><%= chatroom.sender.username %></strong></p>
         </div>
       </div>
       <div class="notification-actions" style="align-self: center; padding-right: 20px;">
