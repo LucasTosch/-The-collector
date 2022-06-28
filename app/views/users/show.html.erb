@@ -70,13 +70,17 @@
     </div>
   </div>
   <h2 class="card-header">Mes échanges/duels</h2>
-  <% @user_1.each do |booking| %>
+  <% if @user_1.empty? %>
+    <%= "vide" %>
+  <% else %>
+    <% @user_1.each do |booking| %>
     <div class="booking-user">
       <%= booking.date %>
       <%= booking.creator.username %>
       <%= booking.player.username %>
       <%= booking.booking_type %>
       <%= booking.result %>
+    <% end %>
   <% end %>
     </div>
 </div>

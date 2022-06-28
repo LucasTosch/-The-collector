@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
     else
       @booking.player.update(player_score: @booking.player.player_score + 1)
     end
-    redirect_to user_bookings_path(current_user)
+    redirect_to user_path(current_user)
   end
 
   def destroy

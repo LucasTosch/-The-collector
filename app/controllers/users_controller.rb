@@ -54,11 +54,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_1 = []
-    @user_1 << Booking.find_by(creator: current_user)
-    @user_2 = []
-    @user_2 << Booking.find_by(player: current_user)
-    # redirect_to root_path
+    @user_1 = current_user.player_bookings + current_user.creator_bookings
     @chatroom = Chatroom.new
   end
 

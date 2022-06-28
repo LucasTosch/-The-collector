@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :user_games, dependent: :destroy
   has_many :games, through: :user_games
   has_many :messages, dependent: :destroy
+  has_many :player_bookings, class_name: 'Booking', foreign_key: :player_id
+  has_many :creator_bookings, class_name: 'Booking', foreign_key: :creator_id
   has_many :bookings
   validates :username, presence: true
   validates :address, presence: true
