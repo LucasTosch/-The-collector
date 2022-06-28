@@ -5,12 +5,12 @@
         <h2 class="card-header">Tes jeux de cartes préférés, ta meilleure anecdote ou ta dernière acquistion de collectionneur, décris toi !</h2>
         <div class="card-body">
           <%= f.input :description, label: 'Ma description' %>
-          <%= f.submit 'Modifier mon profil', class: 'btn btn-primary' %>
+          <%= f.submit 'Modifier mon profil', class: 'btn btn-primary btn-sm' %>
           <span></span>
           <%= f.input :image, label: 'Mon Avatar', as: :file %>
           <%= f.submit 'Modifier mon Avatar', class: 'btn btn-primary' %>
       <% end %>
-          <div class="retour-profil">
+          <div class="retour-profil my-3 text-end">
             <button class="btn btn-primary"><%= link_to "Retour", user_path(@user) %></button>
           </div>
         </div>
