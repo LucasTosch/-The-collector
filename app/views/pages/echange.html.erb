@@ -1,26 +1,41 @@
-<div class="container">
+<div class="container" style="background-color: white;">
   <h1 class="pt-3 text-center">Classement des échanges</h1>
-  <div class="ranking-flex pt-3">
-    <i class="fas fa-handshake px-2"></i>
-    <p>Classements des joueurs et des collectionneurs ayant réalisé le plus d'échanges</p>
-    <i class="fas fa-handshake px-2"></i>
+  <div class="container-classement">
+    <table style="margin: auto;">
+      <thead>
+        <tr>
+          <th style="text-align: center;">
+            <button id="player-button" class="filters-button btn btn-primary btn-sm" type="button"><%= link_to "Yu-gi-Oh!", "#{echange_path}?game=Yugioh" %>
+            </button>
+          </th>
+          <th style="text-align: center;">
+            <button id="player-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Magic", "#{echange_path}?game=Magic The Gathering" %>
+            </button>
+          </th>
+          <th style="text-align: center;">
+            <button id="player-button" class="filters-button btn btn-primary btn-sm ms-2" type="button"><%= link_to "Pokémon", "#{echange_path}?game=Pokemon" %>
+            </button>
+          </th>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-striped mt-5" style="margin: auto;">
+      <thead>
+        <tr>
+          <th style="text-align: center;">Position</th>
+          <th style="text-align: center;">Collectionneur</th>
+          <th style="text-align: center;">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @traders.sort_by { |user| user.trader_score }.reverse.each_with_index do |user, index| %>
+          <tr>
+            <td scope="row" class="text-center"><%= index +1 %></td>
+            <td class="text-center"><%= cl_image_tag user.image.key, class: "avatar-large", alt: "avatar",style: "width: 10%;margin-right: 10px;" %><%= user.username %></td>
+            <td class="text-center"><%= user.trader_score %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-  <table class="table table-striped mt-5">
-    <thead>
-      <tr class="">
-        <th scope="col" class="header text-center" style="font-size: 21px;">Position</th>
-        <th class="header text-center" style="font-size: 21px;">Nom d'utilisateur</th>
-        <th class="header text-center" style="font-size: 21px;">Nombre d'échanges</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @users.order(trader_score: :desc).each_with_index do |user, index| %>
-      <tr>
-        <td scope="row" class="text-center"><%= index +1 %></td>
-        <td class="text-center"><%= user.username %></td>
-        <td class="text-center"><%= user.trader_score %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
 </div>
