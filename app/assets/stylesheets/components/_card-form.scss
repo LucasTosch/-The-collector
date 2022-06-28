@@ -1,6 +1,5 @@
 .card-form {
   padding: 50px;
-  width: 500px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -8,4 +7,8 @@
   background-clip: border-box;
   // border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 2px;
+}
+
+.card-header {
+  font-size: 1rem
 }
