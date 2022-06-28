@@ -8,6 +8,12 @@
           <ul class="navbar-nav">
             <div class="hover-navbar">
               <li>
+                <i class="fas fa-map"></i>
+                <%= link_to "Chercher un joueur", users_path, class: "nav-link" %>
+              </li>
+            </div>
+            <div class="hover-navbar">
+              <li>
                 <i class="fas fa-user-circle"></i>
                 <%= link_to "Mon Profil", user_path(current_user), class: "nav-link" %>
               </li>
