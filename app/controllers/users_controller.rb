@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_1 = current_user.player_bookings + current_user.creator_bookings
+    @user_1 = @user.player_bookings + @user.creator_bookings
     @chatroom = Chatroom.new
   end
 

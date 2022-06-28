@@ -20,7 +20,7 @@
   <% end %>
   <% if @chatroom.name != 'Discussion générale' %>
     <div class="booking-btn" style="margin: auto;padding-bottom: 30px;">
-      <%= link_to "Organiser une Rencontre", new_user_booking_path(@chatroom.receiver), class: "btn btn-primary", style: "padding: 15px;" %>
+      <%= link_to "Organiser une Rencontre", new_user_booking_path(@chatroom.receiver), class: "btn btn-primary", style: "padding: 15px; width:240px" %>
     </div>
   <% end %>
 </div>
