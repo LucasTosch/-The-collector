@@ -11,7 +11,7 @@
 # User.destroy_all
 # Game.destroy_all
 # Chatroom.destroy_all
-# UserGame.destroy_all
+UserGame.destroy_all
 # file = URI.open('https://tse1.explicit.bing.net/th?id=OIP.QbYQOLvF6Mm5YRMwKHnxUAHaHa&pid=Api')
 # user = User.create!(email: '1234567@gmail.com', password: 'azerty63-1', username: 'tbayard', address: '230 rue paul bert, Lyon', zipcode: '69003', player: true, trader: false, player_score: 27, trust_score: 25)
 # user.image.attach(io: file, filename: '1.png', content_type: 'image/png')
@@ -43,11 +43,11 @@ Chatroom.create!( name: 'Discussion générale' )
 # Game.create!(name: 'Pokemon', description: 'Attrapez-les tous !', image: 'https://s1.qwant.com/thumbr/0x0/2/a/7ce5e058c891719d437de02574f3f596fd105bbf56326b1c4f2a0b37d9480b/Pikachu-01-pokemon-svg-cut-file-free-300x300.jpg?u=https%3A%2F%2Fwww.svgfiles.us%2Fwp-content%2Fuploads%2FPikachu-01-pokemon-svg-cut-file-free-300x300.jpg&q=0&b=1&p=0&a=0')
 # Game.create!(name: 'Magic The Gathering', description: 'La grandeur à tout prix !', image: 'https://s1.qwant.com/thumbr/0x380/3/f/00c9024d03ae676f7ed653016c4872fb2c7a8b787c57dfd83342786f7b4798/MTGlogo-font.jpg?u=https%3A%2F%2Ffontmeme.com%2Fimages%2FMTGlogo-font.jpg&q=0&b=1&p=0&a=0')
 
-# UserGame.create!(user_id: 54, game_id: 18)
-# UserGame.create!(user_id: 49, game_id: 16)
-# UserGame.create!(user_id: 50, game_id: 16)
-# UserGame.create!(user_id: 55, game_id: 17)
-# UserGame.create!(user_id: 56, game_id: 17)
-# UserGame.create!(user_id: 51, game_id: 16)
-# UserGame.create!(user_id: 52, game_id: 18)
-# UserGame.create!(user_id: 53, game_id: 18)
+UserGame.create!(user_id: 18, game_id: 7)
+UserGame.create!(user_id: 19, game_id: 8)
+UserGame.create!(user_id: 20, game_id: 9)
+UserGame.create!(user_id: 21, game_id: 7)
+UserGame.create!(user_id: 22, game_id: 8)
+UserGame.create!(user_id: 23, game_id: 9)
+UserGame.create!(user_id: 24, game_id: 7)
+UserGame.create!(user_id: 25, game_id: 9)

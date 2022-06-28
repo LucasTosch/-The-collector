@@ -15,11 +15,11 @@ class PagesController < ApplicationController
   def duel
     @users = User.all.where(player: true)
     if params[:game] == "Yugioh"
-      @users = UserGame.where(game_id: 16).map { |user_game| User.find(user_game.user_id) }
+      @users = UserGame.where(game_id: 7).map { |user_game| User.find(user_game.user_id) }
     elsif params[:game] == "Pokemon"
-      @users = UserGame.where(game_id: 17).map { |user_game| User.find(user_game.user_id) }
+      @users = UserGame.where(game_id: 8).map { |user_game| User.find(user_game.user_id) }
     elsif params[:game] == "Magic The Gathering"
-      @users = UserGame.where(game_id: 18).map { |user_game| User.find(user_game.user_id) }
+      @users = UserGame.where(game_id: 9).map { |user_game| User.find(user_game.user_id) }
     end
   end
 end
