@@ -30,9 +30,9 @@
       <tbody>
         <% @players.sort_by { |user| user.player_score }.reverse.each_with_index do |user, index| %>
           <tr>
-            <td scope="row" class="text-center"><%= index +1 %></td>
-            <td class="text-center"><%= cl_image_tag user.image.key, class: "avatar-large", alt: "avatar",style: "width: 10%;margin-right: 10px;" %><%= user.username %></td>
-            <td class="text-center"><%= user.player_score %></td>
+            <td scope="row" class="text-center vertical-align"><%= index +1 %></td>
+            <td class="text-center"><%= cl_image_tag user.image.key, class: "avatar-perso vertical-align", alt: "avatar" %><%= user.username %></td>
+            <td class="text-center vertical-align"><%= user.player_score %></td>
           </tr>
         <% end %>
       </tbody>
