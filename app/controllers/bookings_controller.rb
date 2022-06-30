@@ -18,8 +18,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(params_booking)
     @booking.player = User.find(params[:booking][:player_id])
     @booking.creator = current_user
-    @booking.save!
-    redirect_to user_booking_path(current_user, @booking.id)
+    if @booking.save
+      redirect_to user_booking_path(current_user, @booking.id)
+    else
+      render :new
+    end
   end
 
   def update

@@ -1,18 +1,26 @@
-<div class="container" style="text-align: center">
+<div class="container">
   <div class="card-trip">
     <img src="https://cartamundi.fr/app/uploads/2017/03/MagictheGathering-Closeup.jpg" alt="">
     <div class="card-trip-infos">
-      <h2>Organise ta Rencontre</h2>
+      <h2 style= "text-align: center">Organise ta Rencontre</h2>
       <span></span>
-      <h2>Choisis tes dates</h2>
+      <h2 style= "text-align: center">Choisis tes dates</h2>
       <span></span>
-      <div class="container">
+      <div class="container d-flex justify-content-center ">
         <%= simple_form_for [ current_user, @booking ] do |f| %>
         <%= f.input :player_id, as: :hidden %>
-        <p><%= f.date_field :date %></p>
-        <p><%= f.association :game, as: :radio_buttons, label: "Choisis un jeu" %></p>
-        <p><%= f.collection_radio_buttons :booking_type, [['Duel', 'Duel'], ['Echange', 'Echange']], :first, :last %></p>
-        <p style="text-align: center"><%= f.submit "Confirmer", class: "btn btn-primary" %></p>
+        <p style= "text-align: center">
+          <%= f.date_field :date, required: true %>
+        </p>
+        <p>
+          <%= f.association :game, as: :radio_buttons, label: "Choisis un jeu", required: true %>
+        </p>
+        <div class="duel-echange text-center">
+          <%= f.collection_radio_buttons :booking_type, [['Duel', 'Duel'], ['Echange', 'Echange']], :first, :last %>
+        </div>
+        <p style= "text-align: center">
+          <%= f.submit "Confirmer", class: "btn btn-primary"%>
+        </p>
         <% end %>
       </div>
     </div>

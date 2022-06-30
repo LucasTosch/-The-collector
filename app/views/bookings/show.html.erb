@@ -3,13 +3,6 @@
     <div class="carte-container">
       <div class="carte-profil">
         <h5 class="carte-title"><%= @booking.creator.username %></h5>
-        <% if @booking.creator.trader == true %>
-          <%= @booking.creator.trader_score %>
-        <% end %>
-        <% if @booking.creator.player == true %>
-          <%= @booking.creator.player_score %>
-        <% end %>
-          <%= @booking.creator.trust_score %>
         <div class="carte-image">
           <% if @booking.creator.image%>
             <%= cl_image_tag @booking.creator.image.key, width: '100%', height: '257px'%>
@@ -17,17 +10,14 @@
         </div>
       </div>
     </div>
-    <%= image_tag "icon_sword.svg", class:"img", width:"120px" %>
+    <% if @booking.booking_type == "Duel" %>
+      <%= image_tag "icon_sword.svg", class:"img", width:"120px" %>
+    <% else  %>
+      <%= image_tag "echange.png", class:"img", id: "echange-image", width:"120px" %>
+    <% end %>
     <div class="carte-container">
       <div class="carte-profil">
         <h5 class="carte-title"><%= @booking.player.username %></h5>
-        <% if @booking.player.trader == true %>
-          <%= @booking.player.trader_score %>
-        <% end %>
-        <% if @booking.player.player == true %>
-          <%= @booking.player.player_score %>
-        <% end %>
-          <%= @booking.player.trust_score %>
         <div class="carte-image">
           <% if @booking.player.image%>
             <%= cl_image_tag @booking.player.image.key, width: '100%', height: '257px'%>
@@ -36,18 +26,33 @@
       </div>
     </div>
   </div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Duel effectué</button>
+    <% if @booking.booking_type == "Duel" %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Duel effectué</button>
+    <% else %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Echange effectué</button>
+    <% end %>
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Qui a gagné le duel ?</h5>
+      <div class="modal-header" style="display: block">
+        <% if @booking.booking_type == "Duel" %>
+          <h5 class="modal-title" id="exampleModalLabel" style="text-align: center">Qui a gagné le duel ?</h5>
       </div>
       <div class="modal-body">
         <%= simple_form_for [ current_user, @booking ], method: :patch do |f| %>
-        <p style="text-align: center"><%= f.collection_radio_buttons :result, [[current_user.username, current_user.username], [@booking.player.username, @booking.player.username]], :first, :last %></p>
-        <p style="text-align: center"><%= f.submit "Confirmer", class: "btn btn-primary" %></p>
+          <p style="text-align: center"><%= f.collection_radio_buttons :result, [[current_user.username, current_user.username], [@booking.player.username, @booking.player.username]], :first, :last %></p>
+          <p style="text-align: center"><%= f.submit "Confirmer", class: "btn btn-primary" %></p>
+        <% end %>
+        <% else %>
+          <h5 class="modal-title" id="exampleModalLabel" style="text-align: center">Confirmer l'échange ?</h5>
+      </div>
+      <%# Modifier ici ce qui s'affichera dans la fenêtre modale lorsque c'est un échange et non un duel (booking-controller#update à modifier !) %>
+      <div class="modal-body">
+        <%= simple_form_for [ current_user, @booking ], method: :patch do |f| %>
+          <p style="text-align: center"><%= f.collection_radio_buttons :result, [[current_user.username, current_user.username], [@booking.player.username, @booking.player.username]], :first, :last %></p>
+          <p style="text-align: center"><%= f.submit "Confirmer", class: "btn btn-primary" %></p>
+        <% end %>
         <% end %>
       </div>
     </div>
