@@ -13,3 +13,28 @@ legend ~ div.form-check:first-of-type {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+
+
+.collection_radio_buttons {
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+}
+
+.col-form-label {
+  text-align: center;
+}
+
+.form-check {
+  display: flex;
+  justify-content: center;
+}
+
+.form-check-label {
+  padding-left: 0.5rem;
+}
+
+.new_chatroom {
+  display: flex;
+  justify-content: center;
+}

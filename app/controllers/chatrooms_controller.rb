@@ -1,6 +1,8 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = Chatroom.where(sender: current_user) && Chatroom.where(receiver: current_user)
+    @chatrooms = Chatroom.where(sender: current_user) + Chatroom.where(receiver: current_user)
+    # @chatrooms << Chatroom.where(sender: current_user)
+    # @chatrooms << Chatroom.where(receiver: current_user)
   end
 
   def show
@@ -15,7 +17,7 @@ class ChatroomsController < ApplicationController
 
   def create
     chatroom = Chatroom.find_by(sender: current_user, receiver_id: params_chatroom[:receiver].to_i)
-    chatroom2 = Chatroom.find_by(receiver: current_user, sender_id: params_chatroom[:receiver].to_i)
+    chatroom2 = Chatroom.find_by(receiver: current_user, sender_id: params_chatroom[:sender].to_i)
     if chatroom
       redirect_to chatroom_path(chatroom)
     elsif chatroom2
@@ -37,6 +39,6 @@ class ChatroomsController < ApplicationController
   private
 
   def params_chatroom
-    params.require(:chatroom).permit(:receiver)
+    params.require(:chatroom).permit(:receiver, :sender)
   end
 end
