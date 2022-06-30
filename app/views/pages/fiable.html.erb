@@ -28,7 +28,7 @@
         <% @users.sort_by { |user| user.trust_score }.reverse.each_with_index do |user, index| %>
           <tr>
             <td scope="row" class="text-center vertical-align"><%= index +1 %></td>
-            <td class="text-center"><%= cl_image_tag user.image.key, class: "avatar-perso vertical-align", alt: "avatar",style: "width: 10%;margin-right: 10px;" %><%= user.username %></td>
+            <td class="d-flex justify-content-center"><div style="width: 250px;"><%= cl_image_tag user.image.key, class: "avatar-perso vertical-align", alt: "avatar" %><%= user.username %></div></td>
             <td class="text-center vertical-align"><%= user.trust_score %></td>
           </tr>
         <% end %>
