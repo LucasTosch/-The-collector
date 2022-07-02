@@ -13,10 +13,10 @@ Game.destroy_all
 Chatroom.destroy_all
 UserGame.destroy_all
 file = URI.open('https://tse1.explicit.bing.net/th?id=OIP.QbYQOLvF6Mm5YRMwKHnxUAHaHa&pid=Api')
-user1 = User.create!(email: '1234567@gmail.com', password: 'azerty63-1', username: 'tbayard', address: '230 rue paul bert, Lyon', zipcode: '69003', player: true, trader: false, player_score: 27, trust_score: 25)
+user1 = User.create!(email: '1234567@gmail.com', password: 'azerty63-1', username: 'tbayard', address: '230 rue paul bert, Lyon', zipcode: '69003', player: true, trader: false)
 user1.image.attach(io: file, filename: '1.png', content_type: 'image/png')
 file = URI.open('https://www.empireposter.de/bilder/bilder_XL/845023.jpg')
-user2 = User.create!(email: '123456@gmail.com', password: 'azerty63-1', username: 'thenriet', address: '100 Rue Chevreul, Lyon', zipcode: '69007', player: true, trader: false, player_score: 48, trust_score: 45)
+user2 = User.create!(email: '123456@gmail.com', password: 'azerty63-1', username: 'thenriet', address: '100 Rue Chevreul, Lyon', zipcode: '69007', player: true, trader: false)
 user2.image.attach(io: file, filename: '2.png', content_type: 'image/png')
 file = URI.open('http://liderweb.mx/wp-content/uploads/2017/04/Yu-gi-oh.jpg')
 user3 = User.create!(email: '123789@gmail.com', password: 'azerty63-1', username: 'ltoschini', address: '84 Rue du Pensionnat, Lyon', zipcode: '69003', player: false, trader: true, trader_score: 36, trust_score: 32)
