@@ -1,37 +1,37 @@
-<h2>Créer un compte</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :username, label: 'Pseudo',
-                required: false %>
-    <%= f.input :address, label: 'Adresse',
-                input_html: { data: { geocoder_target: "address"}, class: "d-none" },
-                wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } },
-                required: true %>
-    <%= f.input :player, label: 'Es-tu un joueur ?', as: :boolean,
-                required: true %>
-    <%= f.input :trader, label: 'Es-tu un collectionneur ?', as: :boolean,
-                required: true %>
-    <%= f.input :image, as: :file,
-                required: true %>
-    <%= f.input :email, label: 'E-Mail',
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password, label: 'Mot de passe',
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation, label: 'Confirmation du Mot de passe',
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<main >
+  <div class="container-form">
+    <h1>Créer un compte</h1>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :username, label: 'Pseudo',
+                    required: false %>
+        <%= f.input :address, label: 'Adresse',
+                    input_html: { data: { geocoder_target: "address"}, class: "d-none" },
+                    wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } },
+                    required: true %>
+        <%= f.input :player, label: 'Es-tu un joueur ?', as: :boolean,
+                    required: true %>
+        <%= f.input :trader, label: 'Es-tu un collectionneur ?', as: :boolean,
+                    required: true %>
+        <%= f.input :image, as: :file,
+                    required: true %>
+        <%= f.input :email, label: 'E-Mail',
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password, label: 'Mot de passe',
+                    required: true,
+                    hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation, label: 'Confirmation du Mot de passe',
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class="form-actions">
+      <%= f.button :submit, "S'enregistrer", class: "btn btn-flat btn-" %>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "S'enregistrer" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</main>
