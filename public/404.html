@@ -4,26 +4,31 @@
     <title>Erreur 404 : La page que vous cherchez est introuvable</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="./images/The collector.png">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;800&display=swap" rel="stylesheet">
     <style>
     .body-404 {
       background-color: #FEF4FF;
     }
+    
     .container-404 {
-      height: 100%;
-      width: 50%;
-      margin: 0 auto;
-      padding-top: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .principal-404-box {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
     }
+
     .card-image {
       max-width: 350px;
       height: auto;
+      padding-bottom: 32px;
     }
 
     .arrow-back {
@@ -39,7 +44,7 @@
 
   <body class="body-404">
     <!-- This file lives in public/404.html -->
-    <div class="container-404">
+    <main class="container-404">
       <div class="principal-404-box">
         <img class="card-image" src="./images/Erreur 404.png" alt="erreur 404">
         <div class="arrow-back" >
@@ -47,6 +52,6 @@
           <p onclick="backToPage()">Page précédente</p>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
