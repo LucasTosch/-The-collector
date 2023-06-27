@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
 
+gem 'devise-i18n'
 gem "geocoder"
 
 gem 'cloudinary', '~> 1.16.0'

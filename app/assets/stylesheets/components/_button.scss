@@ -2,3 +2,33 @@
   color: white;
   text-decoration: none;
 }
+
+.btn-connect {
+  position: absolute;
+  right: 2vh;
+  bottom: 2vh;
+}
+
+.btn-register {
+  position: absolute;
+  left: 2vh;
+  bottom: 2vh;
+}
+
+.btn-home {
+  padding: 11px 22px;
+  color: white;
+  gap: 10px;
+  width: 220px;
+  height: 44px;
+  background: #3C2C8D;
+  box-shadow: 0px 4px 14px rgba(11, 15, 70, 0.2);
+  border-radius: 40px;
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 50%;
+  text-align: center;
+  border-color: black;
+  }

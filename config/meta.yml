@@ -1,0 +1,5 @@
+meta_product_name: "The Collector"
+meta_title: "The Collector - Le premier site pour échanger et jouer avec d'autres passionnés"
+meta_description: "Rejoins la communauté de joueurs et de collectionneurs la plus grande en France ! Où que tu sois, tu trouveras quelqu'un avec qui partager ta passion."
+meta_image: "logo-granular.png" # should exist in `app/assets/images/`
+twitter_account: "@The_Collector"   # required for Twitter Cards
