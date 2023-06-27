@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [:show, :create, :index, :destroy] do
     resources :messages, only: :create
   end
+  get 'aboutus' => 'pages#aboutus'
   get 'fiable' => 'pages#fiable'
   get 'echange' => 'pages#echange'
   get 'duel' => 'pages#duel'

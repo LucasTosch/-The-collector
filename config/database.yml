@@ -16,6 +16,7 @@
 #
 default: &default
   adapter: postgresql
+  host: ''
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -30,9 +31,9 @@ development:
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
   #username: _The_collector
-
+  # password: ""
   # The password associated with the postgres role (username).
-  #password:
+
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -41,7 +42,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -83,4 +84,4 @@ production:
   <<: *default
   database: _The_collector_production
   username: _The_collector
-  password: <%= ENV['_THE_COLLECTOR_DATABASE_PASSWORD'] %>
+  # password: <%= ENV['_THE_COLLECTOR_DATABASE_PASSWORD'] %>
